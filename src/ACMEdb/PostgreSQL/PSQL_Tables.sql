@@ -184,3 +184,15 @@ FOREIGN KEY         (SucursalID)        REFERENCES  sucursales                  
 FOREIGN KEY         (ClienteID)         REFERENCES  clientes                    (ClienteID),
 FOREIGN KEY         (UsuarioID)         REFERENCES  usuarios                    (UsuarioID)
 );
+
+CREATE TABLE detalle_ventas(
+DetVenID            varchar(15)         NOT NULL    PRIMARY KEY,
+VentaID             varchar(12)         NOT NULL,
+ProductoID          varchar(9)          NOT NULL,   
+Cantidad_Producto   smallint            CHECK       (Cantidad_Producto > 0)     NOT NULL,
+Precio_Venta        double precision    CHECK       (Precio_Venta > 0)          NOT NULL,
+Total               double precision    CHECK       (Total > 0)                 NOT NULL,
+
+FOREIGN KEY         (VentaID)           REFERENCES  ventas                      (VentaID),
+FOREIGN KEY         (ProductoID)        REFERENCES  productos                   (ProductoID)
+);
