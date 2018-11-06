@@ -45,7 +45,7 @@ Activo_Producto     boolean             NOT NULL    DEFAULT                     
 CREATE TABLE descuentos(
 DescuentoID         varchar(5)          NOT NULL    PRIMARY KEY,
 Nombre_Descuento    varchar(15)         NOT NULL,
-Porcentaje_Aplicado varchar(13)         NOT NULL,
+Porcentaje_Aplicado smallint            NOT NULL    CHECK                       (Porcentaje_Aplicado > 0),
 Tipo                varchar(9)          NOT NULL    DEFAULT                     'Acumulado'
 );
 
@@ -157,18 +157,6 @@ FOREIGN KEY         (ProSucID)          REFERENCES  proveedores_sucursal        
 FOREIGN KEY         (UsuarioID)         REFERENCES  usuarios                    (UsuarioID)
 );
 
-CREATE TABLE detalle_compras(
-DetComID            varchar(13)         NOT NULL    PRIMARY KEY,
-CompraID            varchar(12)         NOT NULL,
-ProductoID          varchar(9)          NOT NULL,
-Cantidad_Producto   smallint            NOT NULL    CHECK                       (Cantidad_Producto > 0),
-Precio_Compra       double precision    NOT NULL    CHECK                       (Precio_Compra > 0),
-Total               double precision    NOT NULL    CHECK                       (Total > 0),
-
-FOREIGN KEY         (CompraID)          REFERENCES  compras                     (CompraID),
-FOREIGN KEY         (ProductoID)        REFERENCES  productos                   (ProductoID)
-);
-
 CREATE TABLE ventas(
 VentaID             varchar(12)         NOT NULL    PRIMARY KEY,
 SucursalID          varchar(4)          NOT NULL,
@@ -183,6 +171,18 @@ Total               double precision    NOT NULL    CHECK                       
 FOREIGN KEY         (SucursalID)        REFERENCES  sucursales                  (SucursalID),
 FOREIGN KEY         (ClienteID)         REFERENCES  clientes                    (ClienteID),
 FOREIGN KEY         (UsuarioID)         REFERENCES  usuarios                    (UsuarioID)
+);
+
+CREATE TABLE detalle_compras(
+DetComID            varchar(13)         NOT NULL    PRIMARY KEY,
+CompraID            varchar(12)         NOT NULL,
+ProductoID          varchar(9)          NOT NULL,
+Cantidad_Producto   smallint            NOT NULL    CHECK                       (Cantidad_Producto > 0),
+Precio_Compra       double precision    NOT NULL    CHECK                       (Precio_Compra > 0),
+Total               double precision    NOT NULL    CHECK                       (Total > 0),
+
+FOREIGN KEY         (CompraID)          REFERENCES  compras                     (CompraID),
+FOREIGN KEY         (ProductoID)        REFERENCES  productos                   (ProductoID)
 );
 
 CREATE TABLE detalle_ventas(

@@ -24,30 +24,25 @@ import javafx.stage.Stage;
  */
 
 public class ModelMain {
-    /*  Parents array list position:
-    [0] -> main    |   [1] -> main_menu |  [2] -> terminal_menu |  [3] -> console_menu | [4] -> users 
-    [5] -> clients | 
+    
+     /*  Activation Bools array list position:
+    [0] -> main_bool            |   [1] -> main_menu_bool   |   [2] -> console_menu_bool   |
+    [3] -> terminal_menu_bool   |
     */
+    
+    /*  Parents array list position:
+    [0] -> main    |   [1] -> main_menu |  [2] -> console_menu |  [3] -> terminal_menu |
+    */
+    
+    /*  Text Formatters array list position:
+    [0] -> username_formatter   |   [1] -> user_password_formatter  |*/
     
     /*  Alerts array list position:
     [0] -> confirmation_alert   |   [1] -> error_alert  |
     */
-  
-    /*  Ecrypting variables array list position:
-    [0] -> string_builder   |   [2] -> encryption_type
-    */
-    
-    /*  Activation Bools array list position:
-    [0] -> main_bool            |   [1] -> main_menu_bool   |   [2] -> terminal_menu_bool   |
-    [3] -> console_menu_bool    |   [4] -> users_bool       |   [5] -> clients_bool         | 
-    */
-    
-    /*  Table Models array list position:
-    [0] -> users_table  |   clients_table   |
-    */
     
     /*  User Input array list position:
-    [0] -> username |   [1] -> password
+    [0] -> username |   [1] -> password |
     */
     
     private final Stage primaryStage;
@@ -60,7 +55,7 @@ public class ModelMain {
     */
     
     private BooleanProperty main_bool = new SimpleBooleanProperty(false);
-    private BooleanProperty users_bool = new SimpleBooleanProperty(false);
+    private BooleanProperty main_menu_bool = new SimpleBooleanProperty(false);
    
     private Connection psql_connection;
     private PreparedStatement psql_prepared_statement;
@@ -83,7 +78,7 @@ public class ModelMain {
             MessageDigest cipher = MessageDigest.getInstance("SHA-256");
             byte[] hash = cipher.digest(user_input.get(1).getBytes(StandardCharsets.UTF_8));
             
-            PSQLPrepareStatement("SELECT COUNT(userid) AS Verified FROM Users WHERE userid = ? AND user_password = ?;");
+            PSQLPrepareStatement("SELECT COUNT(UsuarioID) AS Verified FROM Usuarios WHERE UsuarioID = ? AND contraseña = ?;");
             getPSQLPreparedStatement().setString(1, user_input.get(0));
             getPSQLPreparedStatement().setBytes(2, hash);
             PSQLExecuteQueryPS();
@@ -110,7 +105,7 @@ public class ModelMain {
     public void Connect() {
         try {
             Class.forName("org.postgresql.Driver");
-            psql_connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SOPV_OMMEGA", "postgres", "postgres");
+            psql_connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ACMEdb", "azaelmglw", "pos");
         } 
         catch (SQLException e) {
             getAlert(1).setHeaderText("Error 000: A problem has ocurred while connecting to the database. " + e);
@@ -237,12 +232,12 @@ public class ModelMain {
         main_bool.setValue(bool_value);
     }
     
-    public BooleanProperty getUsersBool(){
-        return users_bool;
+    public BooleanProperty getMainMenuBool(){
+        return main_menu_bool;
     }
     
-    public void setUsersBool(boolean bool_value){
-        users_bool.setValue(bool_value);
+    public void setMainMenuBool(boolean bool_value){
+        main_menu_bool.setValue(bool_value);
     }
 
     public String getUser_Input(int input_position) {

@@ -26,10 +26,10 @@ public class ControllerMain implements Initializable {
          
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        model_main.getMainBool().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+        account_tfield.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             if(account_tfield.getTextFormatter() == null){
-                account_tfield.setTextFormatter(model_main.getTextFormatter(1));
-                password_pfield.setTextFormatter(model_main.getTextFormatter(2));
+                account_tfield.setTextFormatter(model_main.getTextFormatter(0));
+                password_pfield.setTextFormatter(model_main.getTextFormatter(1));
             }
         });
     }

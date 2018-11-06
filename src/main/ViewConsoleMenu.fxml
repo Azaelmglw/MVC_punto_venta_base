@@ -70,7 +70,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="reports_button" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchReports" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Products">
+                  <Button fx:id="reports_button" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchProducts" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Products">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
@@ -87,7 +87,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="services_button" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchServices" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Discounts">
+                  <Button fx:id="services_button" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchDiscounts" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Discounts">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>

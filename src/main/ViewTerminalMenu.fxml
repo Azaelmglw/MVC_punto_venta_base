@@ -20,7 +20,7 @@
                <children>
                   <MenuButton fx:id="user_info" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="48.0" prefWidth="250.0" styleClass="description_label" text="User_Info">
                      <items>
-                        <MenuItem fx:id="switch_user" mnemonicParsing="false" onAction="#LaunchMain" text="Switch User" />
+                        <MenuItem fx:id="switch_user" mnemonicParsing="false" text="Switch User" />
                         <MenuItem fx:id="user_settings" mnemonicParsing="false" text="User Config." />
                      </items>
                   </MenuButton>

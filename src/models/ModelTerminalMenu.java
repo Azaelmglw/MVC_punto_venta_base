@@ -2,12 +2,13 @@ package models;
 
 /**
  *
- * @author Azaelmglw
+ * @author azaelmglw
  */
-public class ModelUsers {
-    private final ModelMain model_main ;
+
+public class ModelTerminalMenu {
+    private final ModelMain model_main;
     
-    public ModelUsers(ModelMain model_main){
+    public ModelTerminalMenu(ModelMain model_main){
         this.model_main = model_main;
     }
     
