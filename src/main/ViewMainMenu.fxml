@@ -12,9 +12,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="background" maxHeight="768.0" maxWidth="1366.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="800.0" styleClass="background" stylesheets="@../assets/SOConsole.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="background" maxHeight="768.0" maxWidth="1366.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="800.0" styleClass="background_3" stylesheets="@../assets/SOTerminal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox fx:id="top_section" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" styleClass="background_3" VBox.vgrow="NEVER">
+      <HBox fx:id="top_section" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" styleClass="background_6" VBox.vgrow="NEVER">
          <VBox.margin>
             <Insets />
          </VBox.margin>
@@ -36,7 +36,7 @@
             </Button>
          </children>
       </HBox>
-      <HBox fx:id="bottom_section" prefHeight="40.0" prefWidth="800.0" styleClass="background_4">
+      <HBox fx:id="bottom_section" prefHeight="40.0" prefWidth="800.0" styleClass="background_6">
          <children>
             <HBox fx:id="bottom_left_section" prefHeight="100.0" prefWidth="200.0" />
             <HBox fx:id="bottom_right_section" prefHeight="100.0" prefWidth="200.0" />

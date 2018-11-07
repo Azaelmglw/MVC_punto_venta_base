@@ -28,6 +28,16 @@ public class ControllerConsoleMenu implements Initializable{
     }
     
     @FXML
+    private void LaunchBranchOffices(ActionEvent event){
+        System.out.println("Launch BranchOffices TRIGGERED");
+    }
+    
+    @FXML
+    private void LaunchProviders(ActionEvent event){
+        System.out.println("Launch Providers TRIGGERED");
+    }
+    
+    @FXML
     private void LaunchUsers(ActionEvent event){
         System.out.println("Launch Users TRIGGERED");
     }
@@ -45,6 +55,21 @@ public class ControllerConsoleMenu implements Initializable{
     @FXML
     private void LaunchDiscounts(ActionEvent event){
         System.out.println("Launch Discounts TRIGGERED");
+    }
+    
+    @FXML
+    private void LaunchPurchases(ActionEvent event){
+        System.out.println("Launch Purchases TRIGGERED");
+    }
+    
+    @FXML
+    private void LaunchSales(ActionEvent event){
+        System.out.println("Launch Sales TRIGGERED");
+    }
+    
+    @FXML
+    private void LaunchReports(ActionEvent event){
+        System.out.println("Launch Reports TRIGGERED");
     }
     
 }

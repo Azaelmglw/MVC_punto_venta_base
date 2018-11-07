@@ -31,10 +31,12 @@ public class ControllerMainMenu implements Initializable {
     @FXML
     private void LaunchTerminal(ActionEvent event){
         System.out.println("Launch Terminal TRIGGERED");
+        controller_main.SwitchPrimaryStageRoot(model_users.getModelMain().getParent(3));
     }
     
     @FXML
     private void LaunchConsole(ActionEvent event){
         System.out.println("Launch Console TRIGGERED");
+        controller_main.SwitchPrimaryStageRoot(model_users.getModelMain().getParent(2));
     }
 }

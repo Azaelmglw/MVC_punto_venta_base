@@ -31,7 +31,10 @@ public class ModelMain {
     */
     
     /*  Parents array list position:
-    [0] -> main    |   [1] -> main_menu |  [2] -> console_menu |  [3] -> terminal_menu |
+    [0] -> main             |   [1] -> main_menu    |   [2] -> console_menu |   [3] -> terminal_menu    |   
+    [4] -> branch_offices   |   [5] -> providers    |   [6] -> users        |   [7] -> clients          |
+    [8] -> products         |   [9] -> discounts    |   [10] -> purchases   |   [11] -> sales           |
+    [12] -> reports         |
     */
     
     /*  Text Formatters array list position:
