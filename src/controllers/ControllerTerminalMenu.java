@@ -3,6 +3,8 @@ package controllers;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import models.ModelTerminalMenu;
@@ -24,6 +26,26 @@ public class ControllerTerminalMenu implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         
+    }
+    
+    @FXML
+    private void LaunchNewSale(ActionEvent event){
+        System.out.println("Launch New Sale TRIGGERED");
+    }
+    
+    @FXML
+    private void LaunchNewPurchase(ActionEvent event){
+        System.out.println("Launch New Purchase TRIGGERED");
+    }
+    
+    @FXML
+    private void LaunchStock(ActionEvent event){
+        System.out.println("Launch Stock TRIGGERED");
+    }
+    
+    @FXML
+    private void LaunchReports(ActionEvent event){
+        System.out.println("Launch Reports TRIGGERED");
     }
     
 }

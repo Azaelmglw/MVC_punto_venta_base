@@ -12,31 +12,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="background" maxHeight="768.0" maxWidth="1366.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="800.0" styleClass="background" stylesheets="@../assets/SOConsole.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="background_vbox" maxHeight="768.0" maxWidth="1366.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="800.0" styleClass="background" stylesheets="@../assets/SOTerminal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox fx:id="top_section" alignment="TOP_CENTER" prefHeight="50.0" prefWidth="800.0" styleClass="background_3" VBox.vgrow="NEVER">
-         <children>
-            <HBox fx:id="top_left_section" prefHeight="30.0" prefWidth="454.0" HBox.hgrow="ALWAYS">
-               <children>
-                  <MenuButton fx:id="user_info" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="48.0" prefWidth="250.0" styleClass="description_label" text="User_Info">
-                     <items>
-                        <MenuItem fx:id="switch_user" mnemonicParsing="false" text="Switch User" />
-                        <MenuItem fx:id="user_settings" mnemonicParsing="false" text="User Config." />
-                     </items>
-                  </MenuButton>
-               </children>
-            </HBox>
-            <HBox fx:id="top_right_section" alignment="CENTER_RIGHT" prefHeight="30.0" prefWidth="383.0">
-               <children>
-                  <MenuButton fx:id="section_header" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="48.0" prefWidth="150.0" styleClass="description_label" text="Header">
-                     <items>
-                        <MenuItem fx:id="users" mnemonicParsing="false" text="Users" />
-                        <MenuItem fx:id="clients" mnemonicParsing="false" text="Clients" />
-                     </items>
-                  </MenuButton>
-               </children>
-            </HBox>
-         </children>
+      <HBox fx:id="top_section_hbox" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" styleClass="background_3" VBox.vgrow="NEVER">
          <VBox.margin>
             <Insets />
          </VBox.margin>
@@ -44,76 +22,86 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </HBox>
-      <HBox fx:id="working_area" alignment="CENTER_LEFT" prefHeight="500.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+      <HBox fx:id="working_area_hbox" alignment="CENTER_LEFT" prefHeight="500.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
          <children>
-            <VBox fx:id="left_sub_menu" minWidth="-Infinity" prefHeight="492.0" prefWidth="50.0" styleClass="left_sub_menu" HBox.hgrow="NEVER">
+            <VBox fx:id="left_sub_menu_vbox" minWidth="-Infinity" prefHeight="492.0" prefWidth="50.0" styleClass="left_sub_menu" HBox.hgrow="NEVER">
                <children>
-                  <Button fx:id="aux_top" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="234.0" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" prefHeight="130.0" prefWidth="45.0" styleClass="aux_quick_menu_button" text="A" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="aux_top_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="234.0" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" prefHeight="130.0" prefWidth="45.0" styleClass="aux_quick_menu_button" text="A" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="quick_menu_1" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="154.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" textAlignment="CENTER" VBox.vgrow="NEVER">
+                  <Button fx:id="quick_menu_1_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="154.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" textAlignment="CENTER" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="quick_menu_2" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="234.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" text="2" textAlignment="CENTER" VBox.vgrow="NEVER">
+                  <Button fx:id="quick_menu_2_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="234.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" text="2" textAlignment="CENTER" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="quick_menu_3" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="211.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" text="3" textAlignment="CENTER" VBox.vgrow="NEVER">
+                  <Button fx:id="quick_menu_3_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="211.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" text="3" textAlignment="CENTER" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="quick_menu_4" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="179.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" text="4" textAlignment="CENTER" VBox.vgrow="NEVER">
+                  <Button fx:id="quick_menu_4_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="179.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" text="4" textAlignment="CENTER" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="quick_menu_5" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="156.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" textAlignment="CENTER" VBox.vgrow="NEVER">
+                  <Button fx:id="quick_menu_5_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="156.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" textAlignment="CENTER" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="aux_bottom" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="144.0" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" prefHeight="130.0" prefWidth="45.0" styleClass="aux_quick_menu_button" text="A" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="aux_bottom_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="144.0" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" prefHeight="130.0" prefWidth="45.0" styleClass="aux_quick_menu_button" text="A" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
                   </Button>
                </children>
             </VBox>
-            <Button fx:id="new_sale_button" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="New Sale" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="sales_record_button" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Sales Record" HBox.hgrow="ALWAYS">
-               <HBox.margin>
-                  <Insets left="20.0" right="20.0" />
-               </HBox.margin>
-            </Button>
+            <VBox fx:id="first_menu_column_vbox" prefHeight="660.0" prefWidth="250.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="new_sale_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchNewSale" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="New Sale" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="stock_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchStock" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Stock" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="second_menu_column_vbox" layoutX="60.0" layoutY="10.0" prefHeight="660.0" prefWidth="250.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="new_purchase_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchNewPurchase" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="New Purchase" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="reports_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchReports" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Reports" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
          </children>
       </HBox>
-      <HBox fx:id="bottom_section" prefHeight="50.0" prefWidth="800.0" styleClass="background_4">
+      <HBox fx:id="bottom_section_hbox" prefHeight="40.0" prefWidth="800.0" styleClass="background_3">
          <children>
-            <HBox fx:id="bottom_left_section" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label fx:id="date" prefHeight="34.0" prefWidth="200.0" style="-fx-text-fill: WHITE;" styleClass="description_label" text="Date" textFill="WHITE" HBox.hgrow="ALWAYS">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </Label>
-               </children>
-            </HBox>
-            <HBox fx:id="bottom_center_section" prefHeight="34.0" prefWidth="400.0" styleClass="background_3" HBox.hgrow="ALWAYS" />
-            <HBox fx:id="bottom_right_section" prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label fx:id="time" alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="200.0" style="-fx-text-fill: WHITE;" styleClass="description_label" text="Time" textFill="WHITE" HBox.hgrow="ALWAYS" />
-               </children>
-            </HBox>
+            <HBox fx:id="bottom_left_section_hbox" prefHeight="100.0" prefWidth="200.0" />
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

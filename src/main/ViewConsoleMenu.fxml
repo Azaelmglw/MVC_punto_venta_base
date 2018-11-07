@@ -12,9 +12,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="background" maxHeight="768.0" maxWidth="1366.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="800.0" styleClass="background" stylesheets="@../assets/SOConsole.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:id="background_vbox" maxHeight="768.0" maxWidth="1366.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="800.0" styleClass="background" stylesheets="@../assets/SOTerminal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox fx:id="top_section" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" styleClass="background_3" VBox.vgrow="NEVER">
+      <HBox fx:id="top_section_hbox" alignment="TOP_CENTER" prefHeight="40.0" prefWidth="800.0" styleClass="background_3" VBox.vgrow="NEVER">
          <VBox.margin>
             <Insets />
          </VBox.margin>
@@ -22,76 +22,99 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </HBox>
-      <HBox fx:id="working_area" alignment="CENTER_LEFT" prefHeight="500.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+      <HBox fx:id="working_area_hbox" alignment="CENTER_LEFT" prefHeight="500.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
          <children>
-            <VBox fx:id="left_sub_menu" minWidth="-Infinity" prefHeight="492.0" prefWidth="50.0" styleClass="left_sub_menu" HBox.hgrow="NEVER">
+            <VBox fx:id="left_sub_menu_vbox" minWidth="-Infinity" prefHeight="492.0" prefWidth="50.0" styleClass="left_sub_menu" HBox.hgrow="NEVER">
                <children>
-                  <Button fx:id="aux_top" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="234.0" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" prefHeight="130.0" prefWidth="45.0" styleClass="aux_quick_menu_button" text="A" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="aux_top_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="15.0" layoutY="234.0" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" prefHeight="130.0" prefWidth="45.0" styleClass="aux_quick_menu_button" text="A" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="quick_menu_1" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="154.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" textAlignment="CENTER" VBox.vgrow="NEVER">
+                  <Button fx:id="quick_menu_1_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="154.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" textAlignment="CENTER" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="quick_menu_2" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="234.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" text="2" textAlignment="CENTER" VBox.vgrow="NEVER">
+                  <Button fx:id="quick_menu_2_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="234.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" text="2" textAlignment="CENTER" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="quick_menu_3" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="211.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" text="3" textAlignment="CENTER" VBox.vgrow="NEVER">
+                  <Button fx:id="quick_menu_3_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="211.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" text="3" textAlignment="CENTER" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="quick_menu_4" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="179.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" text="4" textAlignment="CENTER" VBox.vgrow="NEVER">
+                  <Button fx:id="quick_menu_4_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="179.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" text="4" textAlignment="CENTER" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="quick_menu_5" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="156.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" textAlignment="CENTER" VBox.vgrow="NEVER">
+                  <Button fx:id="quick_menu_5_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="156.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="45.0" styleClass="quick_menu_button" textAlignment="CENTER" VBox.vgrow="NEVER">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="aux_bottom" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="144.0" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" prefHeight="130.0" prefWidth="45.0" styleClass="aux_quick_menu_button" text="A" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="aux_bottom_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="144.0" maxHeight="1.7976931348623157E308" minWidth="-Infinity" mnemonicParsing="false" prefHeight="130.0" prefWidth="45.0" styleClass="aux_quick_menu_button" text="A" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
                   </Button>
                </children>
+               <HBox.margin>
+                  <Insets left="-5.0" />
+               </HBox.margin>
             </VBox>
-            <VBox prefHeight="660.0" prefWidth="250.0" HBox.hgrow="ALWAYS">
+            <VBox fx:id="first_menu_column_vbox" prefHeight="660.0" prefWidth="250.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Button fx:id="users_button" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchUsers" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Users">
+                  <Button fx:id="branch_offices_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchBranchOffices" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Branch Offices" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="reports_button" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchProducts" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Products">
+                  <Button fx:id="clients_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchClients" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Clients" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Button>
+                  <Button fx:id="purchases_btn" contentDisplay="TOP" layoutX="30.0" layoutY="30.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchPurchases" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Purchases" VBox.vgrow="ALWAYS" />
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
             </VBox>
-            <VBox layoutX="60.0" layoutY="10.0" prefHeight="660.0" prefWidth="250.0" HBox.hgrow="ALWAYS">
+            <VBox fx:id="second_menu_column_vbox" layoutX="60.0" layoutY="10.0" prefHeight="660.0" prefWidth="250.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Button fx:id="clients_button" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchClients" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Clients">
+                  <Button fx:id="providers_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchProviders" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Providers" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="services_button" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchDiscounts" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Discounts">
+                  <Button fx:id="products_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchProducts" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Products" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </Button>
+                  <Button fx:id="sales_btn" contentDisplay="TOP" layoutX="30.0" layoutY="30.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchSales" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Sales" VBox.vgrow="ALWAYS" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+            <VBox fx:id="third_menu_column_vbox" layoutX="60.0" layoutY="10.0" prefHeight="660.0" prefWidth="250.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button fx:id="users_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchUsers" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Users" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="discounts_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchDiscounts" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Discounts" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="reports_btn" contentDisplay="TOP" layoutX="30.0" layoutY="30.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchReports" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Reports" VBox.vgrow="ALWAYS" />
                </children>
                <padding>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
@@ -99,10 +122,7 @@
             </VBox>
          </children>
       </HBox>
-      <HBox fx:id="bottom_section" prefHeight="40.0" prefWidth="800.0" styleClass="background_4">
-         <children>
-            <HBox fx:id="bottom_left_section" prefHeight="100.0" prefWidth="200.0" />
-         </children>
+      <HBox fx:id="bottom_section_hbox" prefHeight="40.0" prefWidth="800.0" styleClass="background_3">
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
