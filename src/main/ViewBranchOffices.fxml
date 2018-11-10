@@ -89,20 +89,23 @@
                   <Insets left="-5.0" />
                </HBox.margin>
             </VBox>
-            <SplitPane fx:id="users_container_sppane" dividerPositions="0.5369822485207101" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" styleClass="background_6" HBox.hgrow="ALWAYS">
+            <SplitPane fx:id="branch_offices_container_sppane" dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" styleClass="background_6" HBox.hgrow="ALWAYS">
               <items>
                 <AnchorPane fx:id="top_section_anpane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                      <children>
-                        <TableView fx:id="users_table_tbview" prefHeight="334.0" prefWidth="738.0" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="-5.0">
+                        <TableView fx:id="branch_offices_table_tbview" prefHeight="334.0" prefWidth="738.0" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="-5.0">
                           <columns>
-                            <TableColumn fx:id="branch_office_col" minWidth="20.0" text="Branch_Office" />
-                            <TableColumn fx:id="type_col" minWidth="20.0" text="Type" />
-                              <TableColumn fx:id="name_col" minWidth="20.0" text="Name" />
-                              <TableColumn fx:id="phone_number_col" minWidth="20.0" text="Phone Number" />
+                            <TableColumn fx:id="id_col" minWidth="20.0" text="Id" />
+                            <TableColumn fx:id="number_col" minWidth="20.0" text="Number" />
+                              <TableColumn fx:id="suburb_col" minWidth="20.0" text="Suburb" />
+                              <TableColumn fx:id="post_address_col" minWidth="20.0" text="Post Address" />
                               <TableColumn fx:id="email_col" minWidth="20.0" text="Email" />
+                              <TableColumn fx:id="phone_number_col" minWidth="20.0" text="Phone Number" />
+                              <TableColumn fx:id="city_col" minWidth="20.0" text="City" />
+                              <TableColumn fx:id="state_col" minWidth="20.0" text="State" />
                               <TableColumn fx:id="active_col" minWidth="20.0" text="Active" />
                           </columns>
                            <columnResizePolicy>
@@ -118,7 +121,16 @@
                      <children>
                         <VBox fx:id="bottom_section_vbox" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="-5.0">
                            <children>
-                              <TextArea fx:id="description_field_txarea" prefHeight="200.0" prefWidth="200.0" text="1  -&gt;&#10;2 -&gt;&#10;3 -&gt;&#10;4 -&gt;&#10;5 -&gt;&#10;6 -&gt;&#10;7 -&gt;&#10;8 -&gt;&#10;9 -&gt;" VBox.vgrow="ALWAYS">
+                              <HBox fx:id="bottom_header_container_hbox" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                                 <children>
+                                    <Label fx:id="bottom_header_lbl" styleClass="manipulation_label" text="Branch Office Details:">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <TextArea fx:id="description_field_txarea" prefHeight="200.0" prefWidth="200.0" text="Current Managers -&gt;&#10;Current Employees -&gt;&#10;Current Providers -&gt;&#10;Stock Total -&gt;&#10;Spent in Purchases -&gt;&#10;Gained from Sales -&gt;" VBox.vgrow="ALWAYS">
                                  <padding>
                                     <Insets left="12.0" />
                                  </padding>
