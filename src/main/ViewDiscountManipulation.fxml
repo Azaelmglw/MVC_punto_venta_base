@@ -41,55 +41,61 @@
                   <Insets left="-5.0" />
                </HBox.margin>
             </VBox>
-            <SplitPane fx:id="providers_container_sppane" dividerPositions="0.6574074074074074" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" styleClass="background_6" HBox.hgrow="ALWAYS">
+            <SplitPane fx:id="users_container_sppane" dividerPositions="0.6574074074074074" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" styleClass="background_6" HBox.hgrow="ALWAYS">
               <items>
                 <AnchorPane fx:id="top_section_anpane" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                      <children>
-                        <VBox fx:id="provider_data_container_vbox" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                        <VBox fx:id="user_data_container_vbox" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
                            <children>
                               <HBox fx:id="header_container_hbox" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER">
                                  <children>
-                                    <Label fx:id="header_lbl" styleClass="manipulation_label" text="Provider Data:" />
+                                    <Label fx:id="header_lbl" styleClass="manipulation_label" text="User Data" />
                                  </children>
                               </HBox>
                               <HBox fx:id="first_row_input_fields_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                  <children>
+                                    <Label fx:id="type_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Type:" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="10.0" />
+                                       </HBox.margin></Label>
+                                    <ComboBox fx:id="type_cbbox" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="User type" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                       <items>
+                                           <FXCollections fx:factory="observableArrayList">
+                                                <String fx:value="MANAGER" />
+                                                <String fx:value="EMPLOYEE" />
+                                           </FXCollections>
+                                       </items>
+                                    </ComboBox>
                                     <Label fx:id="first_name_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="First Name:" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets left="5.0" right="10.0" />
                                        </HBox.margin></Label>
-                                    <TextField fx:id="first_name_txfield" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="MANDUJANO">
-                                       <HBox.margin>
-                                          <Insets right="20.0" />
-                                       </HBox.margin>
-                                    </TextField>
-                                    <Label fx:id="middle_name_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Middle Name:" HBox.hgrow="ALWAYS">
-                                       <HBox.margin>
-                                          <Insets left="5.0" right="10.0" />
-                                       </HBox.margin></Label>
-                                    <TextField fx:id="middle_name_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="BORIS" HBox.hgrow="ALWAYS" />
+                                    <TextField fx:id="first_name_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="BORIS" HBox.hgrow="ALWAYS" />
                                  </children>
                               </HBox>
                               <HBox fx:id="second_row_input_fields_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="44.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                  <children>
+                                    <Label fx:id="middle_name_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Middle Name:" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="middle_name_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="MANDUJANO" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin></TextField>
                                     <Label fx:id="last_name_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Last Name:" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets left="5.0" right="10.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <TextField fx:id="last_name_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="MANDUJANO" HBox.hgrow="ALWAYS">
-                                       <HBox.margin>
-                                          <Insets right="20.0" />
-                                       </HBox.margin></TextField>
-                                    <Label fx:id="brand_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Brand:" HBox.hgrow="ALWAYS">
-                                       <HBox.margin>
-                                          <Insets left="5.0" right="10.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <TextField fx:id="brand_txfield" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="CONTRERAS" HBox.hgrow="ALWAYS">
+                                    <TextField fx:id="last_name_txfield" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="CONTRERAS" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets />
                                        </HBox.margin>
@@ -108,22 +114,42 @@
                                           <Insets right="20.0" />
                                        </HBox.margin>
                                     </TextField>
-                                    <Label fx:id="street_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Street" HBox.hgrow="ALWAYS">
+                                    <Label fx:id="rfc_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="RFC:" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets left="5.0" right="10.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <TextField fx:id="street_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="TFNY931112BR5" HBox.hgrow="ALWAYS" />
+                                    <TextField fx:id="rfc_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="TFNY931112BR5" HBox.hgrow="ALWAYS" />
                                  </children>
                               </HBox>
                               <HBox fx:id="fourth_row_input_fields_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="112.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                  <children>
+                                    <Label fx:id="street_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Street:" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="street_txfield" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="VERACRUZ" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                    </TextField>
                                     <Label fx:id="suburb_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Suburb:" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets left="5.0" right="10.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <TextField fx:id="suburb_txfield" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="VERACRUZ" HBox.hgrow="ALWAYS">
+                                    <TextField fx:id="suburb_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="LINDAVISTA" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="fifth_row_input_fields_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="146.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="internal_number_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Internal Number:" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="internal_number_txfield" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="7" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets right="20.0" />
                                        </HBox.margin>
@@ -133,17 +159,17 @@
                                           <Insets left="5.0" right="10.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <TextField fx:id="external_number_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="LINDAVISTA" HBox.hgrow="ALWAYS" />
+                                    <TextField fx:id="external_number_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="117" HBox.hgrow="ALWAYS" />
                                  </children>
                               </HBox>
-                              <HBox fx:id="fifth_row_input_fields_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="146.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                              <HBox fx:id="sixth_row_input_fields_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="180.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                  <children>
                                     <Label fx:id="post_address_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Post Address:" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets left="5.0" right="10.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <TextField fx:id="post_address_txfield" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="7" HBox.hgrow="ALWAYS">
+                                    <TextField fx:id="post_address_txfield" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="43680" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets right="20.0" />
                                        </HBox.margin>
@@ -153,17 +179,17 @@
                                           <Insets left="5.0" right="10.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <TextField fx:id="email_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="117" HBox.hgrow="ALWAYS" />
+                                    <TextField fx:id="email_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="borma@gmail.com" HBox.hgrow="ALWAYS" />
                                  </children>
                               </HBox>
-                              <HBox fx:id="sixth_row_input_fields_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="180.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                              <HBox fx:id="seventh_row_input_fields_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="214.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                  <children>
                                     <Label fx:id="city_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="City:" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets left="5.0" right="10.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <TextField fx:id="city_txfield" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="43680" HBox.hgrow="ALWAYS">
+                                    <TextField fx:id="city_txfield" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="TULANCINGO" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets right="20.0" />
                                        </HBox.margin>
@@ -173,7 +199,37 @@
                                           <Insets left="5.0" right="10.0" />
                                        </HBox.margin>
                                     </Label>
-                                    <TextField fx:id="state_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="borma@gmail.com" HBox.hgrow="ALWAYS" />
+                                    <TextField fx:id="state_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="HIDALGO" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="eighth_row_input_fields_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="248.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="insurance_number_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Insurance Number:" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="insurance_number_txfield" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="20326936971" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Label fx:id="curp_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="CURP:" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="curp_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="TFNY931112NTMPAS07" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <HBox fx:id="ninth_row_input_fields_hbox" alignment="CENTER" layoutX="10.0" layoutY="323.0" prefHeight="30.0" prefWidth="200.0">
+                                 <children>
+                                    <Label fx:id="password_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="100.0" styleClass="manipulation_label" text="Password:" HBox.hgrow="ALWAYS">
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <PasswordField fx:id="password_pwfield" promptText="password" />
                                  </children>
                               </HBox>
                            </children>
@@ -185,11 +241,11 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                      <children>
-                        <VBox fx:id="supplied_branch_offices_vbox" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                        <VBox fx:id="branch_office_management_vbox" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
                            <children>
                               <HBox fx:id="bottom_header_container_hbox" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER">
                                  <children>
-                                    <Label fx:id="bottom_header_lbl" styleClass="manipulation_label" text="Supplied Branch Offices:" />
+                                    <Label fx:id="bottom_header_lbl" styleClass="manipulation_label" text="Branch Offices Managed:" />
                                  </children>
                               </HBox>
                               <TableView fx:id="branch_offices_table_tbview" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">

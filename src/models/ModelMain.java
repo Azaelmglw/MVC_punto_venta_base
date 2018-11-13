@@ -26,8 +26,8 @@ import javafx.stage.Stage;
 public class ModelMain {
     
      /*  Activation Bools array list position:
-    [0] -> main_bool            |   [1] -> main_menu_bool   |   [2] -> console_menu_bool   |
-    [3] -> terminal_menu_bool   |
+    [0] -> main_bool            |   [1] -> main_menu_bool       |   [2] -> console_menu_bool   |
+    [3] -> terminal_menu_bool   |   [4] -> branch_offices_bool  |
     */
     
     /*  Parents array list position:
@@ -59,6 +59,9 @@ public class ModelMain {
     
     private BooleanProperty main_bool = new SimpleBooleanProperty(false);
     private BooleanProperty main_menu_bool = new SimpleBooleanProperty(false);
+    private BooleanProperty console_menu_bool = new SimpleBooleanProperty(false);
+    private BooleanProperty terminal_menu_bool = new SimpleBooleanProperty(false);
+    private BooleanProperty branch_offices_bool = new SimpleBooleanProperty(false);
    
     private Connection psql_connection;
     private PreparedStatement psql_prepared_statement;
@@ -241,6 +244,30 @@ public class ModelMain {
     
     public void setMainMenuBool(boolean bool_value){
         main_menu_bool.setValue(bool_value);
+    }
+    
+    public BooleanProperty getConsoleMenuBool(){
+        return console_menu_bool;
+    }
+    
+    public void setConsoleMenuBool(boolean bool_value){
+        console_menu_bool.setValue(bool_value);
+    }
+    
+    public BooleanProperty getTerminalMenuBool(){
+        return terminal_menu_bool;
+    }
+    
+    public void setTerminalMenuBool(boolean bool_value){
+        terminal_menu_bool.setValue(bool_value);
+    }
+    
+    public BooleanProperty getBranchOfficesBool(){
+        return branch_offices_bool;
+    }
+    
+    public void setBranchOfficesBool(boolean bool_value){
+        branch_offices_bool.setValue(bool_value);
     }
 
     public String getUser_Input(int input_position) {

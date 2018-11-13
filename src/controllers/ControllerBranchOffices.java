@@ -3,6 +3,7 @@ package controllers;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.beans.Observable;
 import javafx.fxml.Initializable;
 
 import models.ModelBranchOffices;
@@ -23,7 +24,14 @@ public class ControllerBranchOffices implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    
+        model_branch_offices.getModelMain().getBranchOfficesBool().addListener(((observable, oldValue, newValue) -> {
+            if(newValue == true){
+                
+            }
+            else{
+                
+            }
+        }));
     }
     
 }

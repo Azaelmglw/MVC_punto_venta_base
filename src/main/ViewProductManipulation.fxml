@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="background_vbox" maxHeight="768.0" maxWidth="1366.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="800.0" styleClass="background" stylesheets="@../assets/SOTerminal.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox fx:id="working_area_hbox" alignment="CENTER_LEFT" prefHeight="500.0" prefWidth="800.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox fx:id="left_sub_menu_vbox" minWidth="-Infinity" prefHeight="492.0" prefWidth="60.0" styleClass="left_sub_menu">
+               <children>
+                  <Button fx:id="aux_top_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="154.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="400.0" prefWidth="80.0" styleClass="aux_quick_menu_button" text="Save" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="30.0" />
+                     </padding>
+                  </Button>
+                  <HBox fx:id="left_sub_menu_separator_hbox" prefHeight="100.0" prefWidth="200.0" styleClass="background_6" VBox.vgrow="ALWAYS" />
+                  <Button fx:id="aux_bottom_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="429.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="400.0" prefWidth="80.0" styleClass="quick_menu_button" text="Cancel" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="30.0" />
+                     </padding>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets left="-5.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox fx:id="product_data_container_vbox" prefHeight="200.0" prefWidth="100.0" styleClass="background_6" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox fx:id="header_container_hbox" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label fx:id="header_lbl" styleClass="manipulation_label" text="Product Data:" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="first_row_input_fields_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="name_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Name:" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="5.0" right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="name_lbl" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="MARTILLO" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Label fx:id="type_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Type:" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="5.0" right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="type_cbbox" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="Product Type" HBox.hgrow="ALWAYS">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="MANAGER" />
+                                 <String fx:value="EMPLOYEE" />
+                              </FXCollections>
+                           </items>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="second_row_input_fields_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="44.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="brand_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Brand:" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="5.0" right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="brand_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="TRUPER" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <Label fx:id="sale_price_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="170.0" styleClass="manipulation_label" text="Sale Price:" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="5.0" right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="sale_price_txfield" alignment="CENTER" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="\$87.26" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="ninth_row_input_fields_hbox" alignment="CENTER" layoutX="10.0" layoutY="323.0" prefHeight="30.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="meassurement_unit_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="200.0" styleClass="manipulation_label" text="Meassurement Unit:" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="5.0" right="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="meassurement_unit_cbbox" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="CM">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="MANAGER" />
+                                 <String fx:value="EMPLOYEE" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

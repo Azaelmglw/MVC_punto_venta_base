@@ -62,6 +62,9 @@
                      </VBox.margin>
                   </Button>
                </children>
+               <HBox.margin>
+                  <Insets left="-5.0" />
+               </HBox.margin>
             </VBox>
             <VBox fx:id="first_menu_column_vbox" prefHeight="660.0" prefWidth="250.0" HBox.hgrow="ALWAYS">
                <children>

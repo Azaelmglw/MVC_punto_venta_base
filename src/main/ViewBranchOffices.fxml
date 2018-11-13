@@ -19,7 +19,7 @@
          <children>
             <VBox fx:id="left_sub_menu_vbox" minWidth="-Infinity" prefHeight="492.0" prefWidth="60.0" styleClass="left_sub_menu">
                <children>
-                  <Button fx:id="aux_top_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="154.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="aux_quick_menu_button" text="-&gt;" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="aux_top_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="154.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="aux_quick_menu_button" text="Add" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
@@ -27,7 +27,7 @@
                         <Insets right="30.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="edit_btn" contentDisplay="CENTER" layoutX="19.0" layoutY="234.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="*" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="edit_btn" contentDisplay="CENTER" layoutX="19.0" layoutY="234.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="Edit" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
@@ -35,7 +35,7 @@
                         <Insets right="25.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="deactivate_btn" contentDisplay="CENTER" layoutX="19.0" layoutY="211.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="-" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="deactivate_btn" contentDisplay="CENTER" layoutX="19.0" layoutY="211.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="Deactivate" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
@@ -43,7 +43,7 @@
                         <Insets right="25.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="search_btn" contentDisplay="CENTER" layoutX="19.0" layoutY="179.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="°" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="search_btn" contentDisplay="CENTER" layoutX="19.0" layoutY="179.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="Search" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
@@ -52,7 +52,7 @@
                      </padding>
                   </Button>
                   <HBox fx:id="left_sub_menu_separator_hbox" prefHeight="100.0" prefWidth="200.0" styleClass="background_6" VBox.vgrow="ALWAYS" />
-                  <Button fx:id="quick_menu_11" contentDisplay="CENTER" layoutX="14.0" layoutY="244.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="quick_menu_11" contentDisplay="CENTER" layoutX="14.0" layoutY="244.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="Switch User" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
@@ -60,7 +60,7 @@
                         <Insets right="25.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="quick_menu_111" contentDisplay="CENTER" layoutX="13.0" layoutY="489.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="quick_menu_111" contentDisplay="CENTER" layoutX="13.0" layoutY="489.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="Terminal" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
