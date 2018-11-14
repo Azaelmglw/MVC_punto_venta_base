@@ -66,25 +66,23 @@
                   <Insets left="-5.0" />
                </HBox.margin>
             </VBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+            <VBox fx:id="second_menu_column_vbox" alignment="CENTER" layoutX="60.0" layoutY="10.0" prefHeight="660.0" prefWidth="250.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Button fx:id="stock_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchStock" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Stock" HBox.hgrow="ALWAYS">
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </HBox.margin>
+                  <Button fx:id="accumulated_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchProviders" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Accumulated" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
                   </Button>
-                  <Button fx:id="new_sale_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchNewSale" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="New Sale" HBox.hgrow="ALWAYS">
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="new_purchase_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchNewPurchase" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="New Purchase" HBox.hgrow="ALWAYS">
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </HBox.margin>
+                  <Button fx:id="seasonal_btn" contentDisplay="TOP" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#LaunchProducts" prefHeight="425.0" prefWidth="425.0" styleClass="option_button" text="Seasonal" VBox.vgrow="ALWAYS">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </Button>
                </children>
-            </HBox>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
          </children>
       </HBox>
       <HBox fx:id="bottom_section_hbox" prefHeight="40.0" prefWidth="800.0" styleClass="background_3">

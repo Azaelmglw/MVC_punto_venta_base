@@ -19,7 +19,7 @@
          <children>
             <VBox fx:id="left_sub_menu_vbox" minWidth="-Infinity" prefHeight="492.0" prefWidth="60.0" styleClass="left_sub_menu">
                <children>
-                  <Button fx:id="aux_top_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="154.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="400.0" prefWidth="80.0" styleClass="aux_quick_menu_button" text="Save" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="aux_top_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="154.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="400.0" prefWidth="70.0" styleClass="aux_quick_menu_button" text="Save" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
@@ -28,7 +28,7 @@
                      </padding>
                   </Button>
                   <HBox fx:id="left_sub_menu_separator_hbox" prefHeight="100.0" prefWidth="200.0" styleClass="background_6" VBox.vgrow="ALWAYS" />
-                  <Button fx:id="aux_bottom_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="429.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="400.0" prefWidth="80.0" styleClass="quick_menu_button" text="Cancel" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="aux_bottom_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="429.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="400.0" prefWidth="70.0" styleClass="quick_menu_button" text="Cancel" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>
@@ -50,9 +50,9 @@
                      <children>
                         <VBox fx:id="branch_office_container_vbox" layoutX="14.0" layoutY="14.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
                            <children>
-                              <HBox fx:id="header_container_hbox" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                              <HBox fx:id="top_header_container_hbox" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="NEVER">
                                  <children>
-                                    <Label fx:id="header_lbl" styleClass="manipulation_label" text="Branch Office Data:" />
+                                    <Label fx:id="top_header_lbl" styleClass="manipulation_label" text="Branch Office Data:" />
                                  </children>
                               </HBox>
                               <HBox fx:id="first_row_input_fields_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
@@ -116,7 +116,7 @@
                                     <TextField fx:id="city_txfield" alignment="CENTER" layoutX="116.0" layoutY="15.0" maxWidth="1920.0" prefHeight="25.0" prefWidth="200.0" promptText="TULANCINGO" HBox.hgrow="ALWAYS" />
                                  </children>
                               </HBox>
-                              <HBox fx:id="ninth_row_input_fields_hbox" alignment="CENTER" layoutX="10.0" layoutY="323.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                              <HBox fx:id="fourth_row_input_fields_hbox" alignment="CENTER" layoutX="10.0" layoutY="323.0" prefHeight="30.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                                  <children>
                                     <Label fx:id="state_lbl" blendMode="DIFFERENCE" contentDisplay="CENTER" prefWidth="100.0" styleClass="manipulation_label" text="State:" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
