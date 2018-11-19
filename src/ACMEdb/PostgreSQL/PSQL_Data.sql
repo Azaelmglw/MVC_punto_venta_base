@@ -39,18 +39,18 @@ INSERT INTO usuarios(UsuarioID, SucursalID, Tipo, Nombre, Apellido_Paterno, Apel
 RFC, Calle, Colonia, Numero_Interior, Numero_Exterior, Codigo_Postal, Email, Ciudad, Estado, Numero_Seguro,
 CURP, Contraseña)
 VALUES
-('US0', 'SU0',  'Administrador',    'Francisco',   'Becerril',   'Montero',    '775-117-98-29', 'BEMF940823',   'Veracruz', 'La Morena',    '7',    '117',  '43672',    'frabe@gmail.com',  'Tulancingo',   'Hidalgo',  '15014985173',  'LEFI861101HQTNYM16', digest('admin', 'sha256')),
-('US1', 'SU0',  'Vendedor',         'Ramses',      'Badillo',    'Olguin',     '775-118-45-71', 'BAOR860814',   'Puebla',   'El Paraíso',   '1',    '442',  '43680',    'ramba@gmail.com',  'Tulancingo',   'Hidalgo',  '15022448111',  'ROMO941101HRUYYM16', digest('employee', 'sha256'));
+('US0', 'SU0',  'Administrador',    'Francisco',   'Becerril',   'Montero',    '775-117-98-29', 'BEMF940823T9H1N6',   'Veracruz', 'La Morena',    '7',    '117',  '43672',    'frabe@gmail.com',  'Tulancingo',   'Hidalgo',  '15014985173',  'LEFI861101HQTNYM16', digest('admin', 'sha256')),
+('US1', 'SU0',  'Vendedor',         'Ramses',      'Badillo',    'Olguin',     '775-118-45-71', 'BAOR860814G3B0P3',   'Puebla',   'El Paraíso',   '1',    '442',  '43680',    'ramba@gmail.com',  'Tulancingo',   'Hidalgo',  '15022448111',  'ROMO941101HRUYYM16', digest('employee', 'sha256'));
 
 
 INSERT INTO clientes(ClienteID, DescuentoID, Nombre, Apellido_Paterno, Apellido_Materno, Telefono, RFC, 
 Calle, Colonia, Numero_Interior, Numero_Exterior, Codigo_Postal, Email, Ciudad, Estado, Total_Acumulado)
 VALUES
-('CL0', 'DE0',  'Pedro',    'Tecomalman',   'Gayosso',  '775-982-36-14',    'TEGP920722',   'Arrachera',    'Cortes',       '26',   '420',  '44872',    'pedte@gmail.com',  'Tulancingo', 'Hidalgo', 0),
-('CL1', 'DE0',  'Victor',   'Rodriguez',    'Mendez',   '775-910-78-22',    'ROMV950814',   'Limón',        'Cítricos',     '1',    '38',   '43842',    'vicro@gmail.com',  'Tulancingo', 'Hidalgo', 0),
-('CL2', 'DE0',  'Berenice', 'Gonzalez',     'Arellano', '775-114-18-73',    'GOAB920820',   'Toronja',      'Cítricos',     '1',    '13',   '43842',    'bergo@gmail.com',  'Tulancingo', 'Hidalgo', 0),
-('CL3', 'DE0',  'Verónica', 'Veloz',        'Tirado',   '775-220-85-74',    'VETV950810',   'Adobada',      'Frituras',     '1',    '50',   '45170',    'verve@gmail.com',  'Pachuca',    'Hidalgo', 0),
-('CL4', 'DE0',  'Gerardo',  'Nuez',         'Moreno',   '775-398-14-56',    'NUMG910816',   'Enchilada',    'Frituras',     '3',    '123',  '45170',    'gernu@gmail.com',  'Pachuca',    'Hidalgo', 0);
+('CL0', 'DE0',  'Pedro',    'Tecomalman',   'Gayosso',  '775-982-36-14',    'TEGP920722J9OA7B',   'Arrachera',    'Cortes',       '26',   '420',  '44872',    'pedte@gmail.com',  'Tulancingo', 'Hidalgo', 0),
+('CL1', 'DE0',  'Victor',   'Rodriguez',    'Mendez',   '775-910-78-22',    'ROMV950814A0L6M2',   'Limón',        'Cítricos',     '1',    '38',   '43842',    'vicro@gmail.com',  'Tulancingo', 'Hidalgo', 0),
+('CL2', 'DE0',  'Berenice', 'Gonzalez',     'Arellano', '775-114-18-73',    'GOAB920820B7T4V6',   'Toronja',      'Cítricos',     '1',    '13',   '43842',    'bergo@gmail.com',  'Tulancingo', 'Hidalgo', 0),
+('CL3', 'DE0',  'Verónica', 'Veloz',        'Tirado',   '775-220-85-74',    'VETV9508101F8B5N',   'Adobada',      'Frituras',     '1',    '50',   '45170',    'verve@gmail.com',  'Pachuca',    'Hidalgo', 0),
+('CL4', 'DE0',  'Gerardo',  'Nuez',         'Moreno',   '775-398-14-56',    'NUMG910816V8C9X7',   'Enchilada',    'Frituras',     '3',    '123',  '45170',    'gernu@gmail.com',  'Pachuca',    'Hidalgo', 0);
 
 
 INSERT INTO descuentos_acumulado(DesAcuID, DescuentoID, Bandera_Acumulacion)
@@ -74,31 +74,47 @@ VALUES
 
 INSERT INTO productos_sucursal(ProSucID, SucursalID, ProductoID, Existencia)
 VALUES
-('PA0', 'SU0',  'PR0',  0),
-('PA1', 'SU0',  'PR1',  0),
-('PA2', 'SU0',  'PR2',  0),
-('PA3', 'SU0',  'PR3',  0),
-('PA4', 'SU0',  'PR4',  0);
+('PA0', 'SU0',  'PR0',  61),
+('PA1', 'SU0',  'PR1',  72),
+('PA2', 'SU0',  'PR2',  24),
+('PA3', 'SU0',  'PR3',  47),
+('PA4', 'SU0',  'PR4',  107);
 
 INSERT INTO gerentes_sucursal(GenSucID, SucursalID, UsuarioID)
 VALUES
 ('GS0', 'SU0',  'US0');
 
-
-/*
-INSERT INTO compras(CompraID, ProSucID, UsuarioID, Fecha_Compra, Subtotal_Compra, IVA, Total)
+INSERT INTO compras(CompraID, ProSucID, UsuarioID, Subtotal_Compra, IVA, Total)
 VALUES
-();
+('CO0', 'PS0', 'US1', 3770.76,  '16', 4374.0816),
+('CO1', 'PS0', 'US1', 2717.06,  '16', 3151.7896),
+('CO2', 'PS0', 'US1', 18648.25, '16', 21631.97),
+('CO3', 'PS0', 'US1', 2684.64,  '16', 3114.1824),
+('CO4', 'PS0', 'US1', 5626.58,  '16', 6526.8328);
 
-INSERT INTO ventas(VentaID, SucursalID, ClienteID, UsuarioID, Fecha_Venta, Subtotal, Total_Ahorrado, IVA, Total)
+INSERT INTO ventas(VentaID, SucursalID, ClienteID, UsuarioID, Subtotal_Venta, Total_Ahorrado, IVA, Total)
 VALUES
-();
+('VE0', 'SU0', 'CL0', 'US1',  1252.076,     38.724,  '16',   1452.4082),
+('VE1', 'SU0', 'CL1', 'US1',  140.6888,     4.3512,  '16',   163.199),
+('VE2', 'SU0', 'CL0', 'US1',  267.4096,     8.2704,  '16',   310.1951),
+('VE3', 'SU0', 'CL0', 'US1',  224.5938,     6.9462,  '16',   260.5288),
+('VE4', 'SU0', 'CL0', 'US1',  149.7292,     4.6308,  '16',   173.6859);
+
 
 INSERT INTO detalle_compras(DetComID, CompraID, ProductoID, Cantidad_Producto, Precio_Compra, Total)
 VALUES
-();
+('DC0', 'CO0', 'PR0', 67,   56.28,   3770.76),
+('DC1', 'CO1', 'PR1', 73,   37.22,   2717.06),
+('DC2', 'CO2', 'PR2', 25,   745.93,  18648.25),
+('DC3', 'CO3', 'PR3', 51,   52.64,   2684.64),
+('DC4', 'CO4', 'PR4', 109,  51.62,   5626.58);
 
 INSERT INTO detalle_ventas(DetVenID, VentaID, ProductoID, Cantidad_Producto, Precio_Venta, Total)
 VALUES
-();
-*/
+('DE0', 'VE0', 'PR0',   1,  77.18,      77.18),
+('DE1', 'VE0', 'PR1',   1,  44.33,      44.33),
+('DE2', 'VE0', 'PR2',   1,  1169.09,    1169.09),
+('DE3', 'VE1', 'PR4',   2,  72.52,      145.04),
+('DE4', 'VE2', 'PR3',   4,  68.92,      275.68),
+('DE5', 'VE3', 'PR0',   3,  77.18,      231.54),
+('DE6', 'VE4', 'PR0',   2,  77.18,      154.36);

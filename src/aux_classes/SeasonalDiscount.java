@@ -1,6 +1,6 @@
 package aux_classes;
 
-import java.util.ArrayList;
+import java.util.Stack;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
@@ -13,7 +13,7 @@ public class SeasonalDiscount extends Discount {
     private SimpleStringProperty initiation_date;
     private SimpleStringProperty expiration_date;
     
-    public SeasonalDiscount(ArrayList<String> seasonal_discount_data){
+    public SeasonalDiscount(Stack<String> seasonal_discount_data){
         super(seasonal_discount_data);
         this.seasonal_discount_id = new SimpleStringProperty(seasonal_discount_data.get(4));
         this.initiation_date = new SimpleStringProperty(seasonal_discount_data.get(5));

@@ -1,6 +1,6 @@
 package aux_classes;
 
-import java.util.ArrayList;
+import java.util.Stack;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
@@ -14,11 +14,42 @@ public class Discount {
     private SimpleStringProperty applied_percentage;
     private SimpleStringProperty type;
     
-    public Discount(ArrayList<String> discount_data) {
-        this.id = new SimpleStringProperty(discount_data.get(0));
-        this.name = new SimpleStringProperty(discount_data.get(1));
-        this.applied_percentage = new SimpleStringProperty(discount_data.get(2));
-        this.type = new SimpleStringProperty(discount_data.get(3));
-        
+    public Discount(Stack<String> discount_data) {
+        this.id = new SimpleStringProperty(discount_data.pop());
+        this.name = new SimpleStringProperty(discount_data.pop());
+        this.applied_percentage = new SimpleStringProperty(discount_data.pop());
+        this.type = new SimpleStringProperty(discount_data.pop());
+    }
+
+    public String getId() {
+        return id.get();
+    }
+
+    public void setId(String id) {
+        this.id.set(id);
+    }
+
+    public String getName() {
+        return name.get();
+    }
+
+    public void setName(String name) {
+        this.name.set(name);
+    }
+
+    public String getApplied_percentage() {
+        return applied_percentage.get();
+    }
+
+    public void setApplied_percentage(String applied_percentage) {
+        this.applied_percentage.set(applied_percentage);
+    }
+
+    public String getType() {
+        return type.get();
+    }
+
+    public void setType(String type) {
+        this.type.set(type);
     }
 }

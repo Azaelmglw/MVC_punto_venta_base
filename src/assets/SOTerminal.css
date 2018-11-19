@@ -206,11 +206,14 @@
     -fx-font-size: 15px;
 }
 
-/*
-#quick_menu_1 {
-   // -fx-background-image: url('Search_white_icon.png');
+#search_btn {
+    -fx-background-image: url('Search_white_icon.png');
 }
-*/
+
+#quick_menu_1 {
+    
+}
+
 
 #quick_menu_5 {
     -fx-background-image: url('Help_white_icon.png');

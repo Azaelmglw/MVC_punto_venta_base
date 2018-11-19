@@ -25,11 +25,6 @@ import javafx.stage.Stage;
 
 public class ModelMain {
     
-     /*  Activation Bools array list position:
-    [0] -> main_bool            |   [1] -> main_menu_bool       |   [2] -> console_menu_bool   |
-    [3] -> terminal_menu_bool   |   [4] -> branch_offices_bool  |
-    */
-    
     /*  Parents array list position:
     [0] -> main             |   [1] -> main_menu    |   [2] -> console_menu |   [3] -> terminal_menu    |   
     [4] -> branch_offices   |   [5] -> providers    |   [6] -> users        |   [7] -> clients          |
@@ -62,6 +57,14 @@ public class ModelMain {
     private BooleanProperty console_menu_bool = new SimpleBooleanProperty(false);
     private BooleanProperty terminal_menu_bool = new SimpleBooleanProperty(false);
     private BooleanProperty branch_offices_bool = new SimpleBooleanProperty(false);
+    private BooleanProperty providers_bool = new SimpleBooleanProperty(false);
+    private BooleanProperty users_bool = new SimpleBooleanProperty(false);
+    private BooleanProperty clients_bool = new SimpleBooleanProperty(false);
+    private BooleanProperty products_bool = new SimpleBooleanProperty(false);
+    private BooleanProperty discounts_bool = new SimpleBooleanProperty(false);
+    private BooleanProperty purchases_bool = new SimpleBooleanProperty(false);
+    private BooleanProperty sales_bool = new SimpleBooleanProperty(false);
+    
    
     private Connection psql_connection;
     private PreparedStatement psql_prepared_statement;
@@ -235,7 +238,7 @@ public class ModelMain {
     }
     
     public void setMainBool(boolean bool_value){
-        main_bool.setValue(bool_value);
+        main_bool.set(bool_value);
     }
     
     public BooleanProperty getMainMenuBool(){
@@ -243,7 +246,7 @@ public class ModelMain {
     }
     
     public void setMainMenuBool(boolean bool_value){
-        main_menu_bool.setValue(bool_value);
+        main_menu_bool.set(bool_value);
     }
     
     public BooleanProperty getConsoleMenuBool(){
@@ -251,7 +254,7 @@ public class ModelMain {
     }
     
     public void setConsoleMenuBool(boolean bool_value){
-        console_menu_bool.setValue(bool_value);
+        console_menu_bool.set(bool_value);
     }
     
     public BooleanProperty getTerminalMenuBool(){
@@ -259,7 +262,7 @@ public class ModelMain {
     }
     
     public void setTerminalMenuBool(boolean bool_value){
-        terminal_menu_bool.setValue(bool_value);
+        terminal_menu_bool.set(bool_value);
     }
     
     public BooleanProperty getBranchOfficesBool(){
@@ -267,7 +270,63 @@ public class ModelMain {
     }
     
     public void setBranchOfficesBool(boolean bool_value){
-        branch_offices_bool.setValue(bool_value);
+        branch_offices_bool.set(bool_value);
+    }
+    
+    public BooleanProperty getProvidersBool(){
+        return providers_bool;
+    }
+    
+    public void setProvidersBool(boolean bool_value){
+        providers_bool.set(bool_value);
+    }
+    
+    public BooleanProperty getUsersBool(){
+        return users_bool;
+    }
+    
+    public void setUsersBool(boolean bool_value){
+        users_bool.set(bool_value);
+    }
+    
+    public BooleanProperty getClientsBool(){
+        return clients_bool;
+    }
+    
+    public void setClientsBool(boolean bool_value){
+        clients_bool.set(bool_value);
+    }
+    
+    public BooleanProperty getProductsBool() {
+        return products_bool;
+    }
+    
+    public void setProductsBool(boolean bool_value) {
+        products_bool.set(bool_value);
+    }
+    
+    public BooleanProperty getDiscountsBool() {
+        return discounts_bool;
+    }
+    
+    public void setDiscountsBool(boolean bool_value) {
+        discounts_bool.set(bool_value);
+    }
+    
+    public BooleanProperty getPurchasesBool() {
+        return purchases_bool;
+    }
+    
+    public void setPurchasesBool(boolean bool_value) {
+        purchases_bool.set(bool_value);
+    }
+    
+    public BooleanProperty getSalesBool() {
+        return sales_bool;
+    }
+    
+    public void setSalesBool(boolean bool_value) {
+        sales_bool.set(bool_value);
     }
 
     public String getUser_Input(int input_position) {

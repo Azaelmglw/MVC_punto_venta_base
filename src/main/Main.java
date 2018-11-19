@@ -114,13 +114,13 @@ public class Main extends Application{
             ModelBranchOffices model_branch_offices = new ModelBranchOffices(model_main);
             models_list.add(4, model_branch_offices);
             ControllerBranchOffices controller_branch_offices = new ControllerBranchOffices(models_list, controllers_list);
-            loader_users.setController(controller_branch_offices);
+            loader_branch_offices.setController(controller_branch_offices);
             controllers_list.add(4, controller_branch_offices);
             
             ModelProviders model_providers = new ModelProviders(model_main);
             models_list.add(5, model_providers);
             ControllerProviders controller_providers = new ControllerProviders(models_list, controllers_list);
-            loader_users.setController(controller_providers);
+            loader_providers.setController(controller_providers);
             controllers_list.add(5, controller_providers);
             
             ModelUsers model_users = new ModelUsers(model_main);

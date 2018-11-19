@@ -19,7 +19,7 @@
          <children>
             <VBox fx:id="left_sub_menu_vbox" minWidth="-Infinity" prefHeight="492.0" prefWidth="60.0" styleClass="left_sub_menu">
                <children>
-                  <Button fx:id="aux_top_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="154.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="aux_quick_menu_button" text="-&gt;" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="aux_top_btn" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="154.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#AddProvider" prefHeight="60.0" prefWidth="80.0" styleClass="aux_quick_menu_button" text="-&gt;" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
@@ -27,7 +27,7 @@
                         <Insets right="30.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="edit_btn" contentDisplay="CENTER" layoutX="19.0" layoutY="234.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="*" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="edit_btn" contentDisplay="CENTER" layoutX="19.0" layoutY="234.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#EditProvider" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="*" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
@@ -35,7 +35,7 @@
                         <Insets right="25.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="deactivate_btn" contentDisplay="CENTER" layoutX="19.0" layoutY="211.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="-" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="deactivate_btn" contentDisplay="CENTER" layoutX="19.0" layoutY="211.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#DeactivateProvider" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="-" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
@@ -43,7 +43,7 @@
                         <Insets right="25.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="search_btn" contentDisplay="CENTER" layoutX="19.0" layoutY="179.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="°" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="search_btn" contentDisplay="CENTER" layoutX="19.0" layoutY="179.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#SearchProvider" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="°" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
@@ -68,7 +68,7 @@
                         <Insets right="25.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="quick_menu_3" contentDisplay="CENTER" layoutX="13.0" layoutY="459.0" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="M" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button fx:id="console_menu_btn" contentDisplay="CENTER" layoutX="13.0" layoutY="459.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#LaunchConsoleMenu" prefHeight="60.0" prefWidth="80.0" styleClass="quick_menu_button" text="M" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
@@ -103,7 +103,7 @@
                                     <Label fx:id="top_header_lbl" styleClass="manipulation_label" text="Providers:" />
                                  </children>
                               </HBox>
-                              <TableView fx:id="providers_table_tbview" prefHeight="334.0" prefWidth="738.0" VBox.vgrow="ALWAYS">
+                              <TableView fx:id="providers_table_tbview" onMouseClicked="#GetSelectedRowId" prefHeight="334.0" prefWidth="738.0" VBox.vgrow="ALWAYS">
                                 <columns>
                                     <TableColumn fx:id="id_col" minWidth="20.0" text="Id" />
                                   <TableColumn fx:id="name_col" minWidth="20.0" text="Name" />
@@ -121,17 +121,17 @@
                               </TableView>
                               <HBox fx:id="movement_controls_container_hbox" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" VBox.vgrow="NEVER">
                                  <children>
-                                    <Button fx:id="first_btn" mnemonicParsing="false" prefWidth="400.0" styleClass="quick_menu_button" text="|&lt;-" HBox.hgrow="ALWAYS">
+                                    <Button fx:id="first_btn" mnemonicParsing="false" onAction="#First" prefWidth="400.0" styleClass="quick_menu_button" text="|&lt;-" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets left="5.0" right="5.0" />
                                        </HBox.margin>
                                     </Button>
-                                    <Button fx:id="previous_btn" layoutX="346.0" layoutY="23.0" mnemonicParsing="false" prefWidth="400.0" styleClass="quick_menu_button" text="&lt;-" HBox.hgrow="ALWAYS">
+                                    <Button fx:id="previous_btn" layoutX="346.0" layoutY="23.0" mnemonicParsing="false" onAction="#Previous" prefWidth="400.0" styleClass="quick_menu_button" text="&lt;-" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets left="5.0" right="5.0" />
                                        </HBox.margin>
                                     </Button>
-                                    <ComboBox fx:id="rows_showed_selector_cbbox" prefWidth="400.0" promptText="Rows showed" styleClass="quick_menu_button" HBox.hgrow="ALWAYS">
+                                    <ComboBox fx:id="rows_showed_selector_cbbox" onAction="#SetRowsShowed" prefWidth="400.0" promptText="Rows showed" styleClass="quick_menu_button" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets left="5.0" right="5.0" />
                                        </HBox.margin>
@@ -146,12 +146,12 @@
                                             </FXCollections>    
                                         </items>
                                     </ComboBox>
-                                    <Button fx:id="next_btn" layoutX="377.0" layoutY="23.0" mnemonicParsing="false" prefWidth="400.0" styleClass="quick_menu_button" text="-&gt;" HBox.hgrow="ALWAYS">
+                                    <Button fx:id="next_btn" layoutX="377.0" layoutY="23.0" mnemonicParsing="false" onAction="#Next" prefWidth="400.0" styleClass="quick_menu_button" text="-&gt;" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets left="5.0" right="5.0" />
                                        </HBox.margin>
                                     </Button>
-                                    <Button fx:id="last_btn" layoutX="408.0" layoutY="23.0" mnemonicParsing="false" prefWidth="400.0" styleClass="quick_menu_button" text="-&gt;|" HBox.hgrow="ALWAYS">
+                                    <Button fx:id="last_btn" layoutX="408.0" layoutY="23.0" mnemonicParsing="false" onAction="#Last" prefWidth="400.0" styleClass="quick_menu_button" text="-&gt;|" HBox.hgrow="ALWAYS">
                                        <HBox.margin>
                                           <Insets left="5.0" right="5.0" />
                                        </HBox.margin>

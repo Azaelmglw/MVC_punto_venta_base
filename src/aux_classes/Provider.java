@@ -8,60 +8,17 @@ import javafx.beans.property.SimpleStringProperty;
  * @author azaelmglw
  */
 
-public class Client extends Person {
-    private SimpleStringProperty discount_id;
-    private SimpleStringProperty rfc;
-    private SimpleStringProperty internal_number;
-    private SimpleStringProperty creation_date;
-    private SimpleStringProperty accumulated_total;
+public class Provider extends Person {
+    private SimpleStringProperty brand;
     
-    public Client(Stack<String> client_data) {
-        super(client_data);
-        this.discount_id = new SimpleStringProperty(client_data.pop());
-        this.rfc = new SimpleStringProperty(client_data.pop());
-        this.internal_number = new SimpleStringProperty(client_data.pop());
-        this.creation_date = new SimpleStringProperty(client_data.pop());
-        this.accumulated_total = new SimpleStringProperty(client_data.pop()); 
+    
+    public Provider(Stack<String> provider_data){
+        super(provider_data);
+        this.brand = new SimpleStringProperty(provider_data.pop());
     }
-    
-    public String getDiscount_id(){
-        return this.discount_id.get();
-    }
-    
-    public void setDiscount_id(String discount_id){
-        this.discount_id.set(discount_id);
-    }
-    
-    public String getRfc(){
-        return this.rfc.get();
-    }
-    
-    public void setRfc(String rfc){
-        this.rfc.set(rfc);
-    }
-    
-    public String getInternal_number(){
-        return this.internal_number.get();
-    }
-    
-    public void setInternal_number(String internal_number){
-        this.internal_number.set(internal_number);
-    }
-    
-    public String getCreation_date(){
-        return this.creation_date.get();
-    }
-    
-    public void setCreation_date(String creation_date){
-        this.creation_date.set(creation_date);
-    }
-    
-    public String getAccumulated_total(){
-        return this.accumulated_total.get();
-    }
-    
-    public void setAccumulated_total(String accumulated_total){
-        this.accumulated_total.set(accumulated_total);
+
+    public String getBrand() {
+        return brand.get();
     }
     
     public String getId() {
@@ -170,5 +127,5 @@ public class Client extends Person {
 
     public void setActive(String active) {
         this.active.set(active);
-    } 
+    }    
 }
