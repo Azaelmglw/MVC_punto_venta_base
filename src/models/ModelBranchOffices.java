@@ -50,23 +50,25 @@ public class ModelBranchOffices {
         return branch_offices_data;
     }
     
-    public void ObtainBranchOfficeDetails(BranchOffice branch_office) {
+    public String ObtainBranchOfficeDetails(BranchOffice branch_office) {
+        String description = "";
         try {
             model_main.PSQLPrepareStatement("SELECT * FROM obtain_branch_office_details(?);");
             model_main.getPSQLPreparedStatement().setString(1, branch_office.getId());
             model_main.PSQLExecuteQueryPS();
             model_main.getPSQLResult_Set().first();
-            branch_office_data.push(model_main.getPSQLResult_Set().getString("Gained_From_Sales"));
-            branch_office_data.push(model_main.getPSQLResult_Set().getString("Spent_In_Purchases"));
-            branch_office_data.push(model_main.getPSQLResult_Set().getString("Current_Stock"));
-            branch_office_data.push(model_main.getPSQLResult_Set().getString("Current_Providers"));
-            branch_office_data.push(model_main.getPSQLResult_Set().getString("Current_Employees"));
-            branch_office_data.push(model_main.getPSQLResult_Set().getString("Current_Managers"));
+            description += "Current Managers -> " + getModelMain().getPSQLResult_Set().getString("Current_Managers") + ".\n" +
+            "Current Employees -> " + getModelMain().getPSQLResult_Set().getString("Current_Employees") + ".\n" +
+            "Current Providers -> " + getModelMain().getPSQLResult_Set().getString("Current_Providers") + ".\n" +
+            "Current Stock -> " + getModelMain().getPSQLResult_Set().getString("Current_Stock") + ".\n" +
+            "Spent In Purchases -> " + getModelMain().getPSQLResult_Set().getString("Spent_In_Purchases") + ".\n" +
+            "Gained From Sales -> " + getModelMain().getPSQLResult_Set().getString("Gained_From_Sales") + ".\n";
         }
         catch(SQLException e) {
             getModelMain().getAlert(1).setHeaderText("Error 000: An error has occurred while obtaining the selected branch office details: " + e);
             getModelMain().getAlert(1).showAndWait();
         }  
+        return description;
     }
     
     public ModelMain getModelMain() {

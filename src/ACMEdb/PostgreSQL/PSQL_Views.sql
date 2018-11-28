@@ -36,5 +36,9 @@ FROM Ventas
 INNER JOIN clientes ON (ventas.clienteid = clientes.clienteid)
 INNER JOIN usuarios ON (ventas.usuarioid = usuarios.usuarioid);
 
+CREATE OR REPLACE VIEW Managers AS
+SELECT *
+FROM usuarios WHERE usuarios.activo_usuario = 'T' AND usuarios.tipo = 'Administrador';
+
 
 

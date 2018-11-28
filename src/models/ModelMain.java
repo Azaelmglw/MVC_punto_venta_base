@@ -44,32 +44,16 @@ public class ModelMain {
     */
     
     private final Stage primaryStage;
+        
+    private ArrayList<BooleanProperty> ui_bools = new ArrayList<>();
     
-    /*  There are some events that would've unefficient to link to a button or some of the other basic
-    controls, in this case, we want to load the users data without the need of a button and that's why
-    we use <<BooleanProperties>> that can then be put into a listener which will fire an event whenever
-    the value of the Property is changed.
-    This way we can manage by code the exact moment when we want to load the mayority of the tables data.
-    */
+    private Object transferible_object;
     
-    private BooleanProperty main_bool = new SimpleBooleanProperty(false);
-    private BooleanProperty main_menu_bool = new SimpleBooleanProperty(false);
-    private BooleanProperty console_menu_bool = new SimpleBooleanProperty(false);
-    private BooleanProperty terminal_menu_bool = new SimpleBooleanProperty(false);
-    private BooleanProperty branch_offices_bool = new SimpleBooleanProperty(false);
-    private BooleanProperty providers_bool = new SimpleBooleanProperty(false);
-    private BooleanProperty users_bool = new SimpleBooleanProperty(false);
-    private BooleanProperty clients_bool = new SimpleBooleanProperty(false);
-    private BooleanProperty products_bool = new SimpleBooleanProperty(false);
-    private BooleanProperty discounts_bool = new SimpleBooleanProperty(false);
-    private BooleanProperty purchases_bool = new SimpleBooleanProperty(false);
-    private BooleanProperty sales_bool = new SimpleBooleanProperty(false);
-    
-   
     private Connection psql_connection;
     private PreparedStatement psql_prepared_statement;
     private CallableStatement psql_callable_statement;
     private ResultSet psql_result_set;
+    private ResultSet psql_result_set_2;
     private String psql_query;
     
     private List<Parent> parents = new ArrayList<>(20);
@@ -129,6 +113,7 @@ public class ModelMain {
     public void PSQLPrepareStatement(String psql_query){
         try {
             Connect();
+            psql_connection.setAutoCommit(true);
             psql_prepared_statement = psql_connection.prepareStatement(psql_query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
         }
         catch(SQLException e){
@@ -137,13 +122,46 @@ public class ModelMain {
         }
     }
     
+    public void PSQLPrepareTransactionStatement(String psql_query) {
+        try {            
+            Connect();
+            psql_connection.setAutoCommit(false);
+            psql_prepared_statement = psql_connection.prepareStatement(psql_query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+        }
+        catch(SQLException e) {
+            getAlert(1).setHeaderText("Error 000: A problem has ocurred while preparing the transaction statement " + e);
+            getAlert(1).showAndWait();
+        }
+    }
+    
     public void PSQLExecuteQueryPS() {
         try {
-            Connect();
             psql_result_set = psql_prepared_statement.executeQuery();
+            psql_connection.close();
         }
         catch(SQLException e) {
             getAlert(1).setHeaderText("Error 000: A problem has ocurred while executing the query: " + e);
+            getAlert(1).showAndWait();
+        }
+    }
+    
+    public void PSQLExecuteQueryPS_2() {
+        try {
+            psql_result_set_2 = psql_prepared_statement.executeQuery();
+            psql_connection.close();
+        }
+        catch(SQLException e) {
+            getAlert(1).setHeaderText("Error 000: A problem has ocurred while executing the query: " + e);
+            getAlert(1).showAndWait();
+        }
+    }
+    
+    public void PSQLExecuteTransactionQueryPS() {
+        try {
+            psql_result_set = psql_prepared_statement.executeQuery();
+        }
+        catch(SQLException e) {
+            getAlert(1).setHeaderText("Error 000: A problem has ocurred while executing the transaction query: " + e);
             getAlert(1).showAndWait();
         }
     }
@@ -157,8 +175,18 @@ public class ModelMain {
         catch(SQLException e){
             getAlert(1).setHeaderText("Error 000: A problem has ocurred while executing the update: " + e);
             getAlert(1).showAndWait();
+        } 
+    }
+    
+    public void PSQLExecuteTransactionUpdate() {
+        try {
+            psql_prepared_statement.executeUpdate();
+            psql_prepared_statement.close();
         }
-        
+        catch(SQLException e) {
+            getAlert(1).setHeaderText("Error 000: A problem has ocurred while executing the transaction update: " + e);
+            getAlert(1).showAndWait();
+        }
     }
     
     public void PSQLExecuteSentenece(){
@@ -171,6 +199,41 @@ public class ModelMain {
             getAlert(1).setHeaderText("Error 000: A problem has ocurred while executing the sentence: " + e);
             getAlert(1).showAndWait();
         }
+    }
+    
+    public void PSQLExecuteTransactionSentence() {
+        try {
+            psql_prepared_statement.execute();
+            psql_prepared_statement.close();  
+        }
+        catch(SQLException e) {
+            getAlert(1).setHeaderText("Error 000: A problem has ocurred while executing the transaction sentence: " + e);
+            getAlert(1).showAndWait();
+        }
+    }
+    
+    public void PSQLCommitTransaction() {
+        try {
+            psql_connection.commit();
+            psql_connection.setAutoCommit(true);
+            psql_connection.close();
+        }
+        catch(SQLException e) {
+            getAlert(1).setHeaderText("Error 000: A problem has ocurred while commiting the transaction: " + e);
+            getAlert(1).showAndWait();
+        } 
+    }
+    
+    public void PSQLRollbackTransaction() {
+        try {
+            psql_connection.rollback();
+            psql_connection.setAutoCommit(true);
+            psql_connection.close();
+        }
+        catch(SQLException e) {
+            getAlert(1).setHeaderText("Error 000: A problem has ocurred while rollbacking the transaction: " + e);
+            getAlert(1).showAndWait();
+        } 
     }
     
     public void PSQLPrepareCallCS(){
@@ -201,6 +264,14 @@ public class ModelMain {
         return psql_prepared_statement;
     }
     
+    public ResultSet getPSQLResult_Set(){
+        return psql_result_set;
+    }
+    
+    public ResultSet getPSQLResult_Set_2(){
+        return psql_result_set;
+    }
+    
     public Stage getPrimaryStage() {
         return primaryStage;
     }
@@ -211,6 +282,14 @@ public class ModelMain {
 
     public void setParent(int parent_position, Parent parent) {
         this.parents.add(parent_position, parent);
+    }
+    
+    public BooleanProperty getUI_Bool(int bool_position) {
+        return ui_bools.get(bool_position);
+    }
+    
+    public void setUI_Bool(int bool_position, BooleanProperty ui_bool) {
+        ui_bools.add(bool_position, ui_bool);
     }
     
     public TextFormatter getTextFormatter(int text_formatter_position){
@@ -228,105 +307,13 @@ public class ModelMain {
     public void setAlert(int alert_position, Alert alert){
         this.alerts.add(alert_position, alert);
     }
-    
-    public ResultSet getPSQLResult_Set(){
-        return psql_result_set;
+
+    public Object getTransferible_object() {
+        return transferible_object;
     }
-    
-    public BooleanProperty getMainBool(){
-        return main_bool;
-    }
-    
-    public void setMainBool(boolean bool_value){
-        main_bool.set(bool_value);
-    }
-    
-    public BooleanProperty getMainMenuBool(){
-        return main_menu_bool;
-    }
-    
-    public void setMainMenuBool(boolean bool_value){
-        main_menu_bool.set(bool_value);
-    }
-    
-    public BooleanProperty getConsoleMenuBool(){
-        return console_menu_bool;
-    }
-    
-    public void setConsoleMenuBool(boolean bool_value){
-        console_menu_bool.set(bool_value);
-    }
-    
-    public BooleanProperty getTerminalMenuBool(){
-        return terminal_menu_bool;
-    }
-    
-    public void setTerminalMenuBool(boolean bool_value){
-        terminal_menu_bool.set(bool_value);
-    }
-    
-    public BooleanProperty getBranchOfficesBool(){
-        return branch_offices_bool;
-    }
-    
-    public void setBranchOfficesBool(boolean bool_value){
-        branch_offices_bool.set(bool_value);
-    }
-    
-    public BooleanProperty getProvidersBool(){
-        return providers_bool;
-    }
-    
-    public void setProvidersBool(boolean bool_value){
-        providers_bool.set(bool_value);
-    }
-    
-    public BooleanProperty getUsersBool(){
-        return users_bool;
-    }
-    
-    public void setUsersBool(boolean bool_value){
-        users_bool.set(bool_value);
-    }
-    
-    public BooleanProperty getClientsBool(){
-        return clients_bool;
-    }
-    
-    public void setClientsBool(boolean bool_value){
-        clients_bool.set(bool_value);
-    }
-    
-    public BooleanProperty getProductsBool() {
-        return products_bool;
-    }
-    
-    public void setProductsBool(boolean bool_value) {
-        products_bool.set(bool_value);
-    }
-    
-    public BooleanProperty getDiscountsBool() {
-        return discounts_bool;
-    }
-    
-    public void setDiscountsBool(boolean bool_value) {
-        discounts_bool.set(bool_value);
-    }
-    
-    public BooleanProperty getPurchasesBool() {
-        return purchases_bool;
-    }
-    
-    public void setPurchasesBool(boolean bool_value) {
-        purchases_bool.set(bool_value);
-    }
-    
-    public BooleanProperty getSalesBool() {
-        return sales_bool;
-    }
-    
-    public void setSalesBool(boolean bool_value) {
-        sales_bool.set(bool_value);
+
+    public void setTransferible_object(Object transferible_object) {
+        this.transferible_object = transferible_object;
     }
 
     public String getUser_Input(int input_position) {

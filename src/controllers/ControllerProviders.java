@@ -33,7 +33,7 @@ public class ControllerProviders implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        model_providers.getModelMain().getProvidersBool().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+        model_providers.getModelMain().getUI_Bool(5).addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             if(newValue == true){
                 rows_showed_selector_cbbox.getSelectionModel().select(0);
                 DisplayProvidersData();

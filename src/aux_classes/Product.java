@@ -9,13 +9,13 @@ import javafx.beans.property.SimpleStringProperty;
  */
 
 public class Product {
-    private SimpleStringProperty id;
-    private SimpleStringProperty name;
-    private SimpleStringProperty type;
-    private SimpleStringProperty brand;
-    private SimpleStringProperty sale_price;
-    private SimpleStringProperty meassurement_unit;
-    private SimpleStringProperty active;
+    protected SimpleStringProperty id;
+    protected SimpleStringProperty name;
+    protected SimpleStringProperty type;
+    protected SimpleStringProperty brand;
+    protected SimpleStringProperty sale_price;
+    protected SimpleStringProperty meassurement_unit;
+    protected SimpleStringProperty active;
     
     public Product(Stack<String> product_data){
         this.id = new SimpleStringProperty(product_data.pop());

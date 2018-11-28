@@ -34,7 +34,7 @@ public class ControllerProducts implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         ProductsTableSetup();
         StockTableSetup();
-        model_products.getModelMain().getProductsBool().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+        model_products.getModelMain().getUI_Bool(8).addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             if(newValue == true) {
                 rows_showed_selector_cbbox.getSelectionModel().select(0);
                 DisplayProductsData();

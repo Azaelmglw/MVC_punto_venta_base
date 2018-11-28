@@ -34,7 +34,7 @@ public class ControllerDiscounts implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         DiscountsTableSetup();
-        model_discounts.getModelMain().getDiscountsBool().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+        model_discounts.getModelMain().getUI_Bool(9).addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             if(newValue == true) {
                 rows_showed_selector_cbbox.getSelectionModel().select(0);
                 DisplayDiscountData();

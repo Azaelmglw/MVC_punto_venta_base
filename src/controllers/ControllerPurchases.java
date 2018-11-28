@@ -34,7 +34,7 @@ public class ControllerPurchases implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         PurchasesTableSetup();
         PurchaseDetailsTableSetup();
-        model_purchases.getModelMain().getPurchasesBool().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+        model_purchases.getModelMain().getUI_Bool(10).addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             if(newValue == true) {
                 rows_showed_selector_cbbox.getSelectionModel().select(0);
                 DisplayPurchasesData();

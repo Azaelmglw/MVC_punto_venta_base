@@ -24,7 +24,7 @@ public class Person {
     protected SimpleStringProperty state;
     protected SimpleStringProperty active;
     
-    protected Person(Stack<String> person_data){
+    public Person(Stack<String> person_data){
         this.id = new SimpleStringProperty(person_data.pop());
         this.first_name = new SimpleStringProperty(person_data.pop());
         this.middle_name = new SimpleStringProperty(person_data.pop());

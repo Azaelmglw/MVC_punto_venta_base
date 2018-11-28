@@ -16,7 +16,7 @@ public class User extends Person {
     private SimpleStringProperty insurance_number;
     private SimpleStringProperty curp;
     private byte[] password;
-    
+     
     public User(Stack<String> user_data, byte[] password) {
         super(user_data);
         this.branch_office_id = new SimpleStringProperty(user_data.pop());
@@ -152,11 +152,11 @@ public class User extends Person {
         this.external_number.set(external_number);
     }
 
-    public String getPostAddress() {
+    public String getPost_address() {
         return this.post_address.get();
     }
 
-    public void setPostAddress(String post_address) {
+    public void setPost_address(String post_address) {
         this.post_address.set(post_address);
     }
 

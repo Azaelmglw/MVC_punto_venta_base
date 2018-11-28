@@ -9,10 +9,10 @@ import javafx.beans.property.SimpleStringProperty;
  */
 
 public class Discount {
-    private SimpleStringProperty id;
-    private SimpleStringProperty name;
-    private SimpleStringProperty applied_percentage;
-    private SimpleStringProperty type;
+    protected SimpleStringProperty id;
+    protected SimpleStringProperty name;
+    protected SimpleStringProperty applied_percentage;
+    protected SimpleStringProperty type;
     
     public Discount(Stack<String> discount_data) {
         this.id = new SimpleStringProperty(discount_data.pop());

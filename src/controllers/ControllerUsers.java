@@ -32,7 +32,7 @@ public class ControllerUsers implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        model_users.getModelMain().getUsersBool().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+        model_users.getModelMain().getUI_Bool(6).addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             if(newValue == true){
                 rows_showed_selector_cbbox.getSelectionModel().select(0);
                 DisplayUsersData();

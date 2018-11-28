@@ -33,7 +33,8 @@ public class ControllerBranchOffices implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        model_branch_offices.getModelMain().getBranchOfficesBool().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+        BranchOfficesTableSetup();
+        model_branch_offices.getModelMain().getUI_Bool(4).addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             if(newValue == true) {
                 rows_showed_selector_cbbox.getSelectionModel().select(0);
                 DisplayBranchOfficesData();
@@ -60,14 +61,16 @@ public class ControllerBranchOffices implements Initializable {
     @FXML
     private void AddBranchOffice(ActionEvent event){
         System.out.println("Add Branch Office TRIGGERED");
-        //controller_main.SwitchPrimaryStageRoot(model_branch_offices.getModelMain().getParent(0));
-        
+        model_branch_offices.getModelMain().getUI_Bool(12).set(true);
+        controller_main.SwitchPrimaryStageRoot(model_branch_offices.getModelMain().getParent(15));
     }
     
     @FXML
     private void EditBranchOffice(ActionEvent event){
         System.out.println("Edit Branch Office TRIGGERED");
-        
+        model_branch_offices.getModelMain().getUI_Bool(12).set(true);
+        model_branch_offices.getModelMain().setTransferible_object(branch_offices_table_tbview.getSelectionModel().getSelectedItem());
+        controller_main.SwitchPrimaryStageRoot(model_branch_offices.getModelMain().getParent(15));
     }
     
     @FXML
@@ -96,13 +99,7 @@ public class ControllerBranchOffices implements Initializable {
     @FXML
     private void GetSelectedRowId(MouseEvent event){
         System.out.println("Obtain Row Id TRIGGERED");
-        model_branch_offices.ObtainBranchOfficeDetails((BranchOffice)branch_offices_table_tbview.getSelectionModel().getSelectedItem());
-        description_field_txarea.setText("Current Managers -> " + model_branch_offices.getBranchOfficeData().pop() + ".\n" +
-        "Current Employees -> " + model_branch_offices.getBranchOfficeData().pop() + ".\n" +
-        "Current Providers -> " + model_branch_offices.getBranchOfficeData().pop() + ".\n" +
-        "Current Stock -> " + model_branch_offices.getBranchOfficeData().pop() + ".\n" +
-        "Spent In Purchases -> " + model_branch_offices.getBranchOfficeData().pop() + ".\n" +
-        "Gained From Sales -> " + model_branch_offices.getBranchOfficeData().pop() + ".\n");
+        description_field_txarea.setText(model_branch_offices.ObtainBranchOfficeDetails((BranchOffice)branch_offices_table_tbview.getSelectionModel().getSelectedItem()));
     }
     
     @FXML
@@ -129,7 +126,11 @@ public class ControllerBranchOffices implements Initializable {
         
     }
     
-    private void DisplayBranchOfficesData(){
+    private void DisplayBranchOfficesData() {
+        branch_offices_table_tbview.setItems(model_branch_offices.ObtainBranchOfficesData(rows_showed_selector_cbbox.getSelectionModel().getSelectedItem().toString(), 0));
+    }
+    
+    private void BranchOfficesTableSetup() {
         id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
         number_col.setCellValueFactory(new PropertyValueFactory<>("number"));
         suburb_col.setCellValueFactory(new PropertyValueFactory<>("suburb"));
@@ -138,7 +139,6 @@ public class ControllerBranchOffices implements Initializable {
         phone_number_col.setCellValueFactory(new PropertyValueFactory<>("phone_number"));
         city_col.setCellValueFactory(new PropertyValueFactory<>("city"));
         state_col.setCellValueFactory(new PropertyValueFactory<>("state"));
-        active_col.setCellValueFactory(new PropertyValueFactory<>("active"));   
-        branch_offices_table_tbview.setItems(model_branch_offices.ObtainBranchOfficesData(rows_showed_selector_cbbox.getSelectionModel().getSelectedItem().toString(), 0));
+        active_col.setCellValueFactory(new PropertyValueFactory<>("active"));
     }
 }

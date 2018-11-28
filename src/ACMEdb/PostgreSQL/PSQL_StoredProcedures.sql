@@ -14,8 +14,7 @@ AS $$
 
     
     BEGIN
-        FOR loop_prosucid IN SELECT prosucid FROM proveedores_sucursal WHERE sucursalid = in_sucursalid ORDER BY prosucid LOOP 
-                RAISE NOTICE 'purchases_total ->(%)', purchases_total;
+        FOR loop_prosucid IN SELECT prosucid FROM proveedores_sucursal WHERE sucursalid = in_sucursalid ORDER BY prosucid LOOP
                 IF (SELECT SUM(total) FROM compras WHERE prosucid = loop_prosucid.prosucid) > 0
                 THEN
                     purchases_total = purchases_total + CAST((SELECT SUM(total) FROM compras WHERE prosucid = loop_prosucid.prosucid) AS double precision);
@@ -88,3 +87,4 @@ AS $$
     END;
 $$
 LANGUAGE plpgsql;
+

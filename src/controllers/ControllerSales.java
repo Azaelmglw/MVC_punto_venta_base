@@ -33,7 +33,7 @@ public class ControllerSales implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         SalesTableSetup();
         SaleDetailsTableSetup();
-        model_sales.getModelMain().getSalesBool().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+        model_sales.getModelMain().getUI_Bool(11).addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
             if(newValue == true) {
                 rows_showed_selector_cbbox.getSelectionModel().select(0);
                 DisplaySalesData();

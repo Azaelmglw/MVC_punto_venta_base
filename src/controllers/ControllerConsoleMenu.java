@@ -30,56 +30,56 @@ public class ControllerConsoleMenu implements Initializable{
     @FXML
     private void LaunchBranchOffices(ActionEvent event){
         System.out.println("Launch BranchOffices TRIGGERED");
-        model_console_menu.getModelMain().setBranchOfficesBool(true);
+        model_console_menu.getModelMain().getUI_Bool(4).set(true);
         controller_main.SwitchPrimaryStageRoot(model_console_menu.getModelMain().getParent(4));
     }
     
     @FXML
     private void LaunchProviders(ActionEvent event){
         System.out.println("Launch Providers TRIGGERED");
-        model_console_menu.getModelMain().setProvidersBool(true);
+        model_console_menu.getModelMain().getUI_Bool(5).set(true);
         controller_main.SwitchPrimaryStageRoot(model_console_menu.getModelMain().getParent(5));
     }
     
     @FXML
     private void LaunchUsers(ActionEvent event){
         System.out.println("Launch Users TRIGGERED");
-        model_console_menu.getModelMain().setUsersBool(true);
+        model_console_menu.getModelMain().getUI_Bool(6).set(true);
         controller_main.SwitchPrimaryStageRoot(model_console_menu.getModelMain().getParent(6));
     }
     
     @FXML
     private void LaunchClients(ActionEvent event){
         System.out.println("Launch Clients TRIGGERED");
-        model_console_menu.getModelMain().setClientsBool(true);
+        model_console_menu.getModelMain().getUI_Bool(7).set(true);
         controller_main.SwitchPrimaryStageRoot(model_console_menu.getModelMain().getParent(7));
     }
     
     @FXML
     private void LaunchProducts(ActionEvent event){
         System.out.println("Launch Products TRIGGERED");
-        model_console_menu.getModelMain().setProductsBool(true);
+        model_console_menu.getModelMain().getUI_Bool(8).set(true);
         controller_main.SwitchPrimaryStageRoot(model_console_menu.getModelMain().getParent(8));
     }
     
     @FXML
     private void LaunchDiscounts(ActionEvent event){
         System.out.println("Launch Discounts TRIGGERED");
-        model_console_menu.getModelMain().setDiscountsBool(true);
+        model_console_menu.getModelMain().getUI_Bool(9).set(true);
         controller_main.SwitchPrimaryStageRoot(model_console_menu.getModelMain().getParent(9));
     }
     
     @FXML
     private void LaunchPurchases(ActionEvent event){
         System.out.println("Launch Purchases TRIGGERED");
-        model_console_menu.getModelMain().setPurchasesBool(true);
+        model_console_menu.getModelMain().getUI_Bool(10).set(true);
         controller_main.SwitchPrimaryStageRoot(model_console_menu.getModelMain().getParent(10));
     }
     
     @FXML
     private void LaunchSales(ActionEvent event){
         System.out.println("Launch Sales TRIGGERED");
-        model_console_menu.getModelMain().setSalesBool(true);
+        model_console_menu.getModelMain().getUI_Bool(11).set(true);
         controller_main.SwitchPrimaryStageRoot(model_console_menu.getModelMain().getParent(11));
     }
     

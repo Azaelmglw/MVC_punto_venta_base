@@ -66,7 +66,7 @@ public class ModelUsers {
         user_data.push(users_data.get(selected_user).getInsurance_number());
         user_data.push(users_data.get(selected_user).getState());
         user_data.push(users_data.get(selected_user).getCity());
-        user_data.push(users_data.get(selected_user).getPostAddress());
+        user_data.push(users_data.get(selected_user).getPost_address());
         user_data.push(users_data.get(selected_user).getExternal_number());
         user_data.push(users_data.get(selected_user).getInternal_number());
         user_data.push(users_data.get(selected_user).getSuburb());

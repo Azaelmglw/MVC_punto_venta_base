@@ -29,4 +29,16 @@ FROM compras
 INNER JOIN proveedores_sucursal ON (compras.prosucid = proveedores_sucursal.prosucid)
 INNER JOIN usuarios ON (compras.usuarioid = usuarios.usuarioid);
 
+SELECT 
+usuarioid AS "Id",
+CONCAT(nombre, ' ', apellido_paterno, ' ', apellido_materno) AS "Name",
+telefono AS "Phone_Number",
+rfc AS "Rfc",
+codigo_postal AS "Post_Address",
+email AS "Email",
+ciudad AS "City",
+estado AS "State",
+numero_seguro AS "Insurance_Number",
+curp AS "Curp"
+FROM usuarios WHERE tipo = 'Administrador';
 
